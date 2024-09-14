@@ -9,7 +9,7 @@
 int menu();
 using namespace std;
 
-struct СurrencyPair {
+struct CurrencyPair {
 	string firstCurrency;
 	string secondCurrency;
 	double exchangeRate;
@@ -20,7 +20,7 @@ struct СurrencyPair {
 
 class Terminal {
 private:
-	vector <СurrencyPair> currencyPairs;
+	vector <CurrencyPair> currencyPairs;
 	map <string, double> terminalMoney;
 public:
 	Terminal() {
@@ -55,7 +55,7 @@ public:
 					changeRate();
 				}
 				else {
-					throw 1; // не хватает средств
+					throw 1; 
 				}
 			}
 			if (firstCurrency == currencyPairs[i].secondCurrency && secondCurrency == currencyPairs[i].firstCurrency) {
@@ -67,13 +67,13 @@ public:
 					changeRate();
 				}
 				else {
-					throw 1;// не хватает средств
+					throw 1;
 				}
 
 			}
 		}
 		if (purchase == -1) {
-			throw exception("error"); // не правильные данные 
+			throw exception("error");
 		}
 		return purchase;
 	}
